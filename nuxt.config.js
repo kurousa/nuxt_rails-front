@@ -51,7 +51,7 @@ export default {
   vuetify: {
     // Doc: https://vuetifyjs.com/ja/customization/a-la-carte/
     //treeShake: true,
-    customVariables: ['~/assets/sass/variables.scss'],
+    //customVariables: ['~/assets/sass/variables.scss'],
     theme: {
       themes: {
         light: {
