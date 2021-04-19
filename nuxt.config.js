@@ -20,7 +20,7 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    //'~/assets/sass/main.scss'
+    // '~/assets/sass/main.scss'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -36,14 +36,14 @@ export default {
     // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module',
     // Doc: https://www.npmjs.com/package/@nuxtjs/vuetify
-    '@nuxtjs/vuetify',
+    '@nuxtjs/vuetify'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
-    'nuxt-i18n',
+    'nuxt-i18n'
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -52,7 +52,7 @@ export default {
   vuetify: {
     // Doc: https://vuetifyjs.com/ja/customization/a-la-carte/
     treeShake: false,
-    //customVariables: ['~/assets/sass/variables.scss'],
+    // customVariables: ['~/assets/sass/variables.scss'],
     theme: {
       themes: {
         light: {
@@ -80,7 +80,7 @@ export default {
         en: require('./locales/en.json')
       }
     }
-  },  
+  },
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
   }
