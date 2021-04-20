@@ -84,7 +84,8 @@ export default {
   },
   // Doc: https://nuxtjs.org/docs/2.x/configuration-glossary/configuration-runtime-config#publicruntimeconfig
   publicRuntimeConfig: {
-    appName: process.env.APP_NAME // 追加
+    appName: process.env.APP_NAME, // 追加
+    uiFaceApiKey: process.env.UI_FACE_API_KEY
   },
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
