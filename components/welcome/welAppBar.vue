@@ -9,11 +9,15 @@
     <ui-app-logo
       @click.native="goTo('scroll-top')"
     />
-    <v-toolbar-title
+    <!-- appTitle Componentsに置き換え -->
+    <app-title
+      class="hidden-mobile-and-down"
+    />
+    <!-- <v-toolbar-title
       class="hidden-mobile-and-down"
     >
       {{ appName }}
-    </v-toolbar-title>
+    </v-toolbar-title> -->
     <v-spacer />
     <v-toolbar-items class="ml-2 hidden-ipad-and-down">
       <v-btn
@@ -61,26 +65,26 @@
 <script>
 import LoginLink from '../beforeLogin/loginLink.vue'
 import signupLink from '../beforeLogin/signupLink.vue'
+import AppTitle from '../ui/appTitle.vue'
+
 export default {
-  components: { signupLink, LoginLink },
+  components: {
+    signupLink,
+    LoginLink,
+    AppTitle
+  },
   props: {
     menus: {
       type: Array,
       default: () => []
-      /* 上記は下と同義
-      default: function() {
-        return []
-      }
-      */
     },
     imgHeight: {
       type: Number,
       default: 0
     }
   },
-  data ({ $config: { appName }, $store }) {
+  data ({ $store }) {
     return {
-      appName,
       scrollY: 0,
       appBarHeight: $store.state.styles.beforeLogin.appBarHeight
     }
