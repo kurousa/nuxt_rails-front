@@ -4,13 +4,11 @@
     <v-main>
       <nuxt />
     </v-main>
-    <bef-login-footer />
+    <beforeLogin-bef-login-footer />
   </v-app>
 </template>
 
 <script>
-import befLoginFooter from '../components/beforeLogin/befLoginFooter.vue'
 export default {
-  components: { befLoginFooter }
 }
 </script>

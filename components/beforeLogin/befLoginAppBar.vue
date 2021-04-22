@@ -17,8 +17,8 @@
 
     <v-spacer />
 
-    <loginLink />
     <signupLink />
+    <loginLink />
   </v-app-bar>
 </template>
 
