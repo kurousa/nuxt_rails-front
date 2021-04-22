@@ -2,3 +2,9 @@ body {
     word-wrap: break-word;
     overflow-wrap: break-word;
 }
+
+#logged-in-home {
+    .v-parallax__content {
+      padding: 0;
+    }
+  }
