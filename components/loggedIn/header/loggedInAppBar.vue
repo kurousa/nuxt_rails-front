@@ -7,7 +7,7 @@
     color="white"
   >
     <slot name="nav-icon" />
-    
+
     <nuxt-link
       to="/"
       class="text-decoration-none"
@@ -15,7 +15,14 @@
       <ui-app-logo />
     </nuxt-link>
 
-    <ui-app-title />
+    <ui-app-title 
+      class="hidden-mobile-and-down"
+    />
+
+    <breadcrumbs
+      v-if="notTopPage"
+    />
+
     <v-spacer />
     <v-menu
       app
@@ -77,7 +84,10 @@
 </template>
 
 <script>
+import appTitle from '../../ui/appTitle.vue'
+import Breadcrumbs from '../ui/breadcrumbs.vue'
 export default {
+  components: { appTitle, Breadcrumbs },
   data () {
     return {
       accountMenus: [
@@ -85,6 +95,11 @@ export default {
         { name: 'account-password', icon: 'mdi-lock-outline' },
         { name: 'logout', icon: 'mdi-logout-variant', divider: true }
       ]
+    }
+  },
+  computed: {
+    notTopPage () {
+      return this.$route.name !== 'index'
     }
   }
 }
