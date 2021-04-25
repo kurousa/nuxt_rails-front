@@ -48,7 +48,9 @@ export default {
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
+  axios: {
+    credentials: true
+  },
 
   vuetify: {
     // Doc: https://vuetifyjs.com/ja/customization/a-la-carte/

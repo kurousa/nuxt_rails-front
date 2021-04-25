@@ -53,6 +53,22 @@ export default {
     }
   },
   methods: {
+    async login() {
+      this.loading = true
+      if (this.isValid) {
+        await this.$axios.$post('/api/v1/user_token', this.params)
+        .then(response => this.authSuccessful(response))
+        .catch(error => this.authFailure(error))
+      }
+      this.loading = false
+    },
+    authSuccessful (response) {
+      console.log(response)
+    },
+    authFailure (response) {
+      console.log(response)
+    }
+    /*
     login () {
       this.loading = true
       setTimeout(() => {
@@ -60,7 +76,7 @@ export default {
         this.$router.replace('/')
         this.loading = false
       }, 1500)
-    }
+    }*/
   }
 }
 </script>
