@@ -29,13 +29,25 @@ class Authentication {
     return new Date().getTime() < this.getExpire()
   }
 
+  get user () {
+    return this.store.state.current.user || {}
+  }
+
+  isUserPresent () {
+    return ('id' in this.user)
+  }
+
+  get loggedIn () {
+    return this.isAuthenticated() && this.isUserPresent()
+  }
+
   login ({ exp, user }) {
     this.setStorage(exp)
     this.store.dispatch('getCurrentUser', user)
   }
 
   logout () {
-    this.$axios.$delete('/api/vi/user_token')
+    this.$axios.$delete('/api/v1/user_token')
     this.removeStorage()
     this.store.dispatch('getCurrentUser', null)
   }

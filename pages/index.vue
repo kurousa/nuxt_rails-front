@@ -123,8 +123,8 @@
 <script>
 import homeImg from '~/assets/images/loggedIn/home.png'
 export default {
-  layout ({ store }) {
-    return store.state.loggedIn ? 'loggedIn' : 'welcome'
+  layout ({ $auth }) {
+    return $auth.loggedIn ? 'loggedIn' : 'welcome'
   },
   data () {
     return {

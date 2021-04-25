@@ -48,8 +48,7 @@
         <v-list-item>
           <v-list-item-content>
             <v-list-item-subtitle>
-              <!-- TODO -->
-              ユーザー名表示
+              {{ $auth.user.name }}
             </v-list-item-subtitle>
           </v-list-item-content>
         </v-list-item>
