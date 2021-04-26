@@ -14,7 +14,11 @@ export const state = () => ({
     { id: 3, name: 'MyProject03', updatedAt: '2021-04-24T00:00+09:00' },
     { id: 4, name: 'MyProject04', updatedAt: '2021-04-25T00:00+09:00' },
     { id: 5, name: 'MyProject05', updatedAt: '2021-04-26T00:00+09:00' }
-  ]
+  ],
+  rememberRoute: {
+    name: 'index',
+    params: {}
+  }
 })
 
 export const getters = {}
@@ -25,6 +29,9 @@ export const mutations = {
   },
   setCurrentUser (state, payload) {
     state.current.user = payload
+  },
+  setRememberRoute (state, payload) {
+    state.rememberRoute = payload
   }
 }
 
@@ -35,5 +42,9 @@ export const actions = {
   },
   getCurrentUser ({ commit }, user) {
     commit('setCurrentUser', user)
+  },
+  getRememberRoute ({ commit }, route) {
+    route = route || { name: 'index', params:{} }
+    commit('setRememberRoute', { name: route.name, params: route.params })
   }
 }

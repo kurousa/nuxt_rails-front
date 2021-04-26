@@ -52,6 +52,11 @@ class Authentication {
     this.store.dispatch('getCurrentUser', null)
   }
 
+  unauthError () {
+    this.removeStorage()
+    throw this.error({ statuscode: 401, message:'Unauthorized' })
+  }
+
   encrypt (exp) {
     const expire = String(exp * 1000)
     return cryptoJs.AES.encrypt(expire, this.$config.cryptoKey).toString()

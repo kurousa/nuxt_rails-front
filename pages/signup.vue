@@ -35,6 +35,7 @@ import UserFormEmail from '../components/user/userFormEmail.vue'
 import UserFormName from '../components/user/userFormName.vue'
 import UserFormPassword from '../components/user/userFormPassword.vue'
 export default {
+  middleware: 'loggedInIsRedirects',
   components: { befLoginFormCard, UserFormEmail, UserFormName, UserFormPassword },
   layout: 'beforeLogin',
   data () {

@@ -44,6 +44,7 @@ import befLoginFormCard from '../components/beforeLogin/befLoginFormCard.vue'
 import UserFormEmail from '../components/user/userFormEmail.vue'
 import UserFormPassword from '../components/user/userFormPassword.vue'
 export default {
+  middleware: 'loggedInIsRedirects',
   components: { befLoginFormCard, UserFormEmail, UserFormPassword },
   layout: 'beforeLogin',
   data () {
@@ -65,6 +66,8 @@ export default {
     },
     async authSuccessful (response) {
       await this.$auth.login(response)
+      console.log(this.$store.state.rememberRoute)
+      this.$router.push(this.$store.state.rememberRoute)
       //console.log(this.$store.state.current.user)
     },
     authFailure (response) {
