@@ -1,12 +1,9 @@
-import auth from "../plugins/auth"
-
 export default async ({ $auth, store, route, redirect }) => {
   // トップページかつユーザーが存在していない場合は、ウェルカムページ表示のため何もしない
   if (route.name === 'index' && !$auth.isUserPresent()) {
     return false
   }
 
-  
   if (!$auth.isAuthenticated()) { // 有効期限が切れている
     let msg = 'ログインが必要です'
 

@@ -70,24 +70,15 @@ export default {
       this.$auth.login(response)
       console.log(this.$store.state.rememberRoute)
       this.$router.push(this.$store.state.rememberRoute)
-      //console.log(this.$store.state.current.user)
     },
     authFailure (response) {
       console.log(response.response.status)
-      if (response.response.status === 404) {
-        console.log('トースター表示')
-        this.$store.dispatch('getToast', { msg:'ユーザーが見つかりません' })
-      }
+      return (response.response.status === 404)
+        ? this.$store.dispatch('getToast', { msg: 'ユーザーが見つかりません😷' })
+        : this.$my.errorHandler(response.response)
+
     }
-    /*
-    login () {
-      this.loading = true
-      setTimeout(() => {
-        this.$store.dispatch('login')
-        this.$router.replace('/')
-        this.loading = false
-      }, 1500)
-    }*/
+
   }
 }
 </script>
