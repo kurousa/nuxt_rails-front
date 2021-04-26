@@ -16,7 +16,7 @@ export default async ({ $auth, store, route, redirect }) => {
     } else {
       store.dispatch('getRememberRoute', route) // ログイン後にアクセスするルートをVuexに保存
     }
-    console.log(msg)
+    store.dispatch('getToast', { msg })
     return redirect('/login')
   } else if (!$auth.isUserPresent()) { // 有効期限内だがユーザーが存在していない
     return $auth.unauthError()
